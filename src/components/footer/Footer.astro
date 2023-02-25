@@ -1,17 +1,17 @@
 ---
 import Icon from "./iconos/Icon.astro";
-  const iconos = ['/img/WhatsApp.png','/img/email.png','/img/Instagram.png']
+const iconos = ["./img/WhatsApp.png", "./img/email.png", "./img/Instagram.png"];
 ---
 
 <footer class="bg-white text-[#8c8888]">
-  <div class=" flex justify-between px-5 py-2 items-center ">
+  <div class="flex justify-between px-5 py-2 items-center">
     <span class="hidden md:block text-[0.6rem]">fruta & fruto 2022</span>
     <span>Contacto</span>
     <ul class="flex gap-4">
-      { iconos.map((icono)=>(
-        <Icon icono={icono} />
-      )) }
+      {iconos.map((icono) => <Icon icono={icono} />)}
     </ul>
   </div>
-  <span class="block md:hidden text-[0.6rem] text-center">fruta & fruto 2022</span>
+  <span class="block md:hidden text-[0.6rem] text-center"
+    >fruta & fruto 2022</span
+  >
 </footer>

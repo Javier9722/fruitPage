@@ -4,30 +4,35 @@ import User from "./cardUsers/User.astro";
 
 const users = [
   {
-    name: 'Roberta',
-    rol: 'Contenido',
-    img: '/img/personas/roberta.jpg'
-  },
-    {
-    name: 'Marcela',
-    rol:'Chef de cocina',
-    img:'/img/personas/marcela.jpg'
+    name: "Roberta",
+    rol: "Contenido",
+    img: "./img/personas/roberta.jpg",
   },
   {
-    name: 'Andrea',
-    rol: 'Pequeña productora',
-    img:'/img/personas/andrea.jpg'
-  }
-]
-
+    name: "Marcela",
+    rol: "Chef de cocina",
+    img: "./img/personas/marcela.jpg",
+  },
+  {
+    name: "Andrea",
+    rol: "Pequeña productora",
+    img: "./img/personas/andrea.jpg",
+  },
+];
 ---
 
 <Section bg="blanco">
-  <h1 class="font-pacifico text-[#DA2B1F] text-center text-[1.1rem] sm:text-[1.5rem]">Quienes somos</h1>
-  <p class="text-[#8c8888] text-center text-[0.9rem] sm:text-[1rem]">Conozca la comunidad detrás de la iniciativa</p>
-  <ul class="grid grid-cols-1 gap-5 justify-items-center md:grid-cols-2 lg:grid-cols-3 mt-4">
-    {users.map((user)=>(
-      <User user={user} />
-    ))}
+  <h1
+    class="font-pacifico text-[#DA2B1F] text-center text-[1.1rem] sm:text-[1.5rem]"
+  >
+    Quienes somos
+  </h1>
+  <p class="text-[#8c8888] text-center text-[0.9rem] sm:text-[1rem]">
+    Conozca la comunidad detrás de la iniciativa
+  </p>
+  <ul
+    class="grid grid-cols-1 gap-5 justify-items-center md:grid-cols-2 lg:grid-cols-3 mt-4"
+  >
+    {users.map((user) => <User user={user} />)}
   </ul>
 </Section>
