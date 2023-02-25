@@ -1,0 +1,10 @@
+---
+interface Props {
+  item: string
+}
+
+const { item } = Astro.props
+
+---
+
+<li class='md:hover:text-slate-700 md:cursor-pointer md:text-xs'>{item}</li>

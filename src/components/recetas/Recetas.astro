@@ -1,0 +1,45 @@
+---
+import Section from "../Section.astro";
+import Card from "./cardRecetas/Card.astro";
+
+const recetas = [
+  {
+    title: "Bowl de aguacate",
+    description: "Receta refrescante y llena de vitaminas para su desayuno.",
+    img: "/img/recetas/ensalada-de-frutas.jpg",
+  },
+  {
+    title: "Ensalada de kiwi",
+    description: "Receta refrescante y llena de vitaminas para su desayuno.",
+    img: "/img/recetas/ensalada-de-kiwi.jpg",
+  },
+  {
+    title: "Mix de vegetales",
+    description: "Receta refrescante y llena de vitaminas para su desayuno.",
+    img: "/img/recetas/mix-de-vegetales.jpg",
+  },
+  {
+    title: "Pimentones a la Juliana",
+    description: "Receta refrescante y llena de vitaminas para su desayuno.",
+    img: "/img/recetas/pimentones-juliana.jpg",
+  },
+  {
+    title: "Plato oriental",
+    description: "Receta refrescante y llena de vitaminas para su desayuno.",
+    img: "/img/recetas/plato-oriental.jpg",
+  },
+  {
+    title: "Remolachas horneadas",
+    description: "Receta refrescante y llena de vitaminas para su desayuno.",
+    img: "/img/recetas/beterrabas-asadas.jpg",
+  },
+];
+---
+
+<Section bg="crema">
+  <ul class="grid grid-cols-1 gap-5 justify-items-center md:grid-cols-2 lg:grid-cols-3">
+    { recetas.map((receta)=>(
+      <Card receta={receta} />
+    ))}
+  </ul>
+</Section>

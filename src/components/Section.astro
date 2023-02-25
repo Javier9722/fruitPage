@@ -1,0 +1,23 @@
+---
+interface Props {
+  bg: string;
+}
+const { bg } = Astro.props;
+
+const style = {
+  blanco: "bg-white",
+  crema: "bg-[#e5ceb6]",
+  tranparent: "bg-transparent",
+};
+const error = {
+  gradient: "bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900",
+};
+
+//`${style2[bg]}` resumen del modo de herencia de estilos en clases
+---
+
+<section
+  class={style[bg] === undefined ? `${error.gradient} p-5` : `${style[bg]} p-5`}
+>
+  <slot />
+</section>

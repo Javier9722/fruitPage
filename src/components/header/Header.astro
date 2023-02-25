@@ -1,0 +1,40 @@
+---
+import LiHeader from "./listHeader/LiHeader.astro";
+const list = ["Inicio", "Recetas", "Quienes Somos", "Contacto"];
+---
+
+<header
+  class="w-full flex flex-col md:flex-row items-center justify-between px-3 bg-white"
+>
+  <div class="w-full md:w-fit flex justify-between items-center">
+    <img src="/img/logo.png" alt="logo" class="h-6" />
+    <div class="md:hidden">
+      <button id="menu"><i class="far fa-bars" id="hola"></i></button>
+    </div>
+  </div>
+  <nav class="w-full md:w-auto">
+    <ul class="hidden md:flex md:flex-row gap-3">
+      {list.map((item) => <LiHeader item={item} />)}
+    </ul>
+    <ul id="movilList" class="hidden flex-col items-end md:hidden">
+      {list.map((item) => <LiHeader item={item} />)}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const capButton = document.querySelector("#menu") as HTMLElement;
+  const capIcon = capButton.querySelector("i") as HTMLElement;
+  const capMovilList = document.querySelector("#movilList") as HTMLElement;
+
+  capButton.onclick = () => {
+    const arr = [...capIcon.classList];
+    if (arr[1] === "fa-bars") {
+      capIcon.classList.replace("fa-bars", "fa-times");
+      capMovilList.classList.replace("hidden", "flex");
+    } else {
+      capIcon.classList.replace("fa-times", "fa-bars");
+      capMovilList.classList.replace("flex", "hidden");
+    }
+  };
+</script>

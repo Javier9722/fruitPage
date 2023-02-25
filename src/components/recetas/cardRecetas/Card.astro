@@ -1,0 +1,22 @@
+---
+interface Props {
+  receta :{
+    title:string,
+    description: string,
+    img:string
+  }
+}
+
+const { receta } = Astro.props;
+const { title, description, img} = receta;
+
+---
+
+<li class="w-full max-w-[450px] rounded-lg overflow-hidden bg-white">
+  <img src={img} alt={title} class="w-full">
+  <div class="px-4 grid gap-2 py-2">
+    <h1 class="text-[0.9rem]">{title}</h1>
+    <p class="text-[0.8rem]">{description}</p>
+    <button class="text-[0.8rem] font-medium bg-[#DA2B1F] text-white px-2 py-1 rounded-md w-fit">Ver receta</button>
+  </div>
+</li>

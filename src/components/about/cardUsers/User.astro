@@ -1,0 +1,18 @@
+---
+interface Props {
+  user: {
+    name:string,
+    rol:string,
+    img:string
+  }
+}
+
+const { user } = Astro.props;
+const { name, rol, img } = user;
+---
+
+<li>
+  <img src={img} alt={name} class="rounded-[50%] ">
+  <h1 class="font-pacifico text-[#DA2B1F] text-center text-[0.9rem]">{name}</h1>
+  <p class="text-[#8c8888] text-center text-[0.8rem]">{rol}</p>
+</li>
